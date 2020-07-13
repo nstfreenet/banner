@@ -1,0 +1,13 @@
+#!/bin/bash
+# Created by Mei 2020
+# Modified by IDTunnel Baner SSH
+
+
+wget -O /etc/banner-akun "https://raw.githubusercontent.com/idtunnel/Banner-SSH/master/banner"
+
+cd
+#banner SSH OpenSSH
+sed -i '/Banner none/a Banner /etc/banner-akun' /etc/ssh/sshd_config
+
+#banner SSH Dropbear
+#echo "OPTIONS=\"-b /etc/banner-akun\"" > /etc/sysconfig/dropbear

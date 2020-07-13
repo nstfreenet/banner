@@ -1,0 +1,13 @@
+#!/bin/bash
+# Created by Mei 2020
+# Modified by IDTunnel Baner SSH
+
+#script
+wget -O /etc/issue.net "https://raw.githubusercontent.com/idtunnel/Banner-SSH/master/banner"
+
+cd
+#banner SSH OpenSSH
+sed -i '/Banner none/a Banner /etc/issue.net' /etc/ssh/sshd_config
+
+#banner Dropebar
+#sudah otomatis terinstall
